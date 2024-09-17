@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.11.9 on win32)" generated="2024-09-17T10:07:39.697495" rpa="false" schemaversion="5">
+<suite id="s1" name="Basic Functions" source="C:\Users\nn\dexterslab-robot-testing\basic_functions.robot">
+<test id="s1-t1" name="Testing Basic functionality" line="24">
+<kw name="GIVEN the user opens up" owner="resource">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-09-17T10:07:41.117279" level="INFO">{"browser": "firefox", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\nn\\dexterslab-robot-testing\\browser\\traces\\f81cc7fe-57a0-4731-a098-3b70c0f57a66"}</msg>
+<msg time="2024-09-17T10:07:42.199011" level="INFO">Successfully created browser with options: {"browser":"firefox","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\nn\\dexterslab-robot-testing\\browser\\traces\\f81cc7fe-57a0-4731-a098-3b70c0f57a66"}</msg>
+<arg>${browser}</arg>
+<arg>headless=false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-09-17T10:07:41.116335" elapsed="1.082676"/>
+</kw>
+<arg>firefox</arg>
+<status status="PASS" start="2024-09-17T10:07:41.115359" elapsed="1.083652"/>
+</kw>
+<kw name="AND opens the Homepgage of" owner="resource">
+<kw name="New Page" owner="Browser">
+<msg time="2024-09-17T10:07:45.717677" level="INFO">Successfully initialized new page object and opened url: http://192.168.178.53:5000</msg>
+<msg time="2024-09-17T10:07:45.717677" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-09-17T10:07:42.221462" elapsed="3.499156"/>
+</kw>
+<arg>http://192.168.178.53:5000</arg>
+<status status="PASS" start="2024-09-17T10:07:42.220486" elapsed="3.501096"/>
+</kw>
+<kw name="AND the title of the frontpage's browser-tab is" owner="resource">
+<kw name="Get Title" owner="Browser">
+<msg time="2024-09-17T10:07:45.909668" level="INFO">Title: 'Homeoffice 2024'</msg>
+<msg time="2024-09-17T10:07:45.909668" level="INFO">${page_title} = Homeoffice 2024</msg>
+<var>${page_title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2024-09-17T10:07:45.776882" elapsed="0.132786"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${page_title}</arg>
+<arg>${tabtitle}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-17T10:07:45.910644" elapsed="0.000000"/>
+</kw>
+<arg>Homeoffice 2024</arg>
+<status status="PASS" start="2024-09-17T10:07:45.775907" elapsed="0.135712"/>
+</kw>
+<kw name="WHEN the user clicks the button in the left corner" owner="resource">
+<kw name="Click" owner="Browser">
+<msg time="2024-09-17T10:07:45.958565" level="INFO">Clicks the element 'id=menuButton'.</msg>
+<arg>id=menuButton</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-17T10:07:45.957591" elapsed="0.346839"/>
+</kw>
+<status status="PASS" start="2024-09-17T10:07:45.956613" elapsed="0.347817"/>
+</kw>
+<kw name="THEN there occurs a menu with a blue color" owner="resource">
+<kw name="Get Style" owner="Browser">
+<msg time="2024-09-17T10:07:46.449643" level="INFO">Value of key: color</msg>
+<msg time="2024-09-17T10:07:46.449643" level="INFO">Value of selected property: rgb(255, 255, 255)</msg>
+<msg time="2024-09-17T10:07:46.450621" level="INFO">${bgcolor} = rgb(255, 255, 255)</msg>
+<var>${bgcolor}</var>
+<arg>id=menu</arg>
+<arg>color</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Gets the computed style properties of the element selected by ``selector``.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.308332" elapsed="0.142289"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${bgcolor}</arg>
+<arg>rgb(255, 255, 255)</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.450621" elapsed="0.002936"/>
+</kw>
+<status status="PASS" start="2024-09-17T10:07:46.307357" elapsed="0.147180"/>
+</kw>
+<kw name="AND the first menu-point is:" owner="resource">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-17T10:07:46.549277" level="INFO">Text: 'Homeoffice General Data'</msg>
+<msg time="2024-09-17T10:07:46.549277" level="INFO">${linktText} = Homeoffice General Data</msg>
+<var>${linktText}</var>
+<arg>id=data_general</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.456475" elapsed="0.092802"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${linktText}</arg>
+<arg>${linktext_1}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.550256" elapsed="0.000976"/>
+</kw>
+<arg>Homeoffice General Data</arg>
+<status status="PASS" start="2024-09-17T10:07:46.455499" elapsed="0.097702"/>
+</kw>
+<kw name="AND the second menu-point is:" owner="resource">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-17T10:07:46.626006" level="INFO">Text: 'Men in Homeoffice Data'</msg>
+<msg time="2024-09-17T10:07:46.626006" level="INFO">${linktText} = Men in Homeoffice Data</msg>
+<var>${linktText}</var>
+<arg>id=data_men</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.558061" elapsed="0.067945"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${linktText}</arg>
+<arg>${linktext_2}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.626984" elapsed="0.000000"/>
+</kw>
+<arg>Men in Homeoffice Data</arg>
+<status status="PASS" start="2024-09-17T10:07:46.557092" elapsed="0.070868"/>
+</kw>
+<kw name="AND the third menu-point is:" owner="resource">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-17T10:07:46.703112" level="INFO">Text: 'Homeoffice Special Data'</msg>
+<msg time="2024-09-17T10:07:46.703112" level="INFO">${linktText} = Homeoffice Special Data</msg>
+<var>${linktText}</var>
+<arg>id=data_special</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.631862" elapsed="0.071250"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${linktText}</arg>
+<arg>${linktext_3}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.704088" elapsed="0.000000"/>
+</kw>
+<arg>Homeoffice Special Data</arg>
+<status status="PASS" start="2024-09-17T10:07:46.630886" elapsed="0.073202"/>
+</kw>
+<kw name="AND the fourth menu-point is:" owner="resource">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-17T10:07:46.756843" level="INFO">Text: 'Homeoffice: Advantages'</msg>
+<msg time="2024-09-17T10:07:46.756843" level="INFO">${linktText} = Homeoffice: Advantages</msg>
+<var>${linktText}</var>
+<arg>id=data_advantages</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.707991" elapsed="0.048852"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${linktText}</arg>
+<arg>${linktext_4}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.757819" elapsed="0.000000"/>
+</kw>
+<arg>Homeoffice: Advantages</arg>
+<status status="PASS" start="2024-09-17T10:07:46.707015" elapsed="0.051781"/>
+</kw>
+<kw name="AND the fifth menu-point is:" owner="resource">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-17T10:07:46.812473" level="INFO">Text: 'Homeoffice: Disadvantages'</msg>
+<msg time="2024-09-17T10:07:46.812473" level="INFO">${linktText} = Homeoffice: Disadvantages</msg>
+<var>${linktText}</var>
+<arg>id=data_disadvantages</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.760749" elapsed="0.051724"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${linktText}</arg>
+<arg>${linktext_5}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.813449" elapsed="0.000000"/>
+</kw>
+<arg>Homeoffice: Disadvantages</arg>
+<status status="PASS" start="2024-09-17T10:07:46.759774" elapsed="0.053675"/>
+</kw>
+<kw name="AND the sixth menu-point is:" owner="resource">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-17T10:07:46.855418" level="INFO">Text: 'Homeoffice in Europe'</msg>
+<msg time="2024-09-17T10:07:46.855418" level="INFO">${linktText} = Homeoffice in Europe</msg>
+<var>${linktText}</var>
+<arg>id=data_european_comparation</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.814426" elapsed="0.040992"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${linktText}</arg>
+<arg>${linktext_6}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.856395" elapsed="0.000000"/>
+</kw>
+<arg>Homeoffice in Europe</arg>
+<status status="PASS" start="2024-09-17T10:07:46.814426" elapsed="0.041969"/>
+</kw>
+<kw name="AND the seventh menu-point is:" owner="resource">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-17T10:07:46.899338" level="INFO">Text: 'Homeoffice: Video Statements'</msg>
+<msg time="2024-09-17T10:07:46.899338" level="INFO">${linktText} = Homeoffice: Video Statements</msg>
+<var>${linktText}</var>
+<arg>id=video_list</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.858346" elapsed="0.040992"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${linktText}</arg>
+<arg>${linktext_7}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.899338" elapsed="0.000983"/>
+</kw>
+<arg>Homeoffice: Video Statements</arg>
+<status status="PASS" start="2024-09-17T10:07:46.857370" elapsed="0.042951"/>
+</kw>
+<kw name="AND the eigth menu point is:" owner="resource">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-17T10:07:46.944235" level="INFO">Text: 'Text-Resourcen'</msg>
+<msg time="2024-09-17T10:07:46.944235" level="INFO">${linktText} = Text-Resourcen</msg>
+<var>${linktText}</var>
+<arg>id=text_resources</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.902279" elapsed="0.042947"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${linktText}</arg>
+<arg>${linktext_8}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.945226" elapsed="0.000962"/>
+</kw>
+<arg>Text-Resourcen</arg>
+<status status="PASS" start="2024-09-17T10:07:46.901292" elapsed="0.044896"/>
+</kw>
+<kw name="WHEN the user clicks the button in the left corner" owner="resource">
+<kw name="Click" owner="Browser">
+<msg time="2024-09-17T10:07:46.948138" level="INFO">Clicks the element 'id=menuButton'.</msg>
+<arg>id=menuButton</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-17T10:07:46.947162" elapsed="0.094672"/>
+</kw>
+<status status="PASS" start="2024-09-17T10:07:46.947162" elapsed="0.095648"/>
+</kw>
+<kw name="THEN the menu dissapears again" owner="resource">
+<kw name="Get Style" owner="Browser">
+<msg time="2024-09-17T10:07:47.089657" level="INFO">Value of key: display</msg>
+<msg time="2024-09-17T10:07:47.089657" level="INFO">Value of selected property: block</msg>
+<msg time="2024-09-17T10:07:47.090635" level="INFO">${position} = block</msg>
+<var>${position}</var>
+<arg>id=data_men</arg>
+<arg>display</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Gets the computed style properties of the element selected by ``selector``.</doc>
+<status status="PASS" start="2024-09-17T10:07:47.043788" elapsed="0.046847"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-17T10:07:49.092318" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-17T10:07:47.090635" elapsed="2.001683"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${position}</arg>
+<arg>block</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-09-17T10:07:49.092318" elapsed="0.000978"/>
+</kw>
+<status status="PASS" start="2024-09-17T10:07:47.042810" elapsed="2.050486"/>
+</kw>
+<doc>a test for home page main menu</doc>
+<status status="PASS" start="2024-09-17T10:07:41.109470" elapsed="7.984799"/>
+</test>
+<doc>Basic functions of dexterslab Home Page
+Testing the basic functionality of the
+main menu of dexterslab home page</doc>
+<status status="PASS" start="2024-09-17T10:07:39.699441" elapsed="9.656958"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Basic Functions">Basic Functions</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
