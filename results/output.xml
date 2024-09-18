@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.11.9 on win32)" generated="2024-09-17T15:39:46.974895" rpa="false" schemaversion="5">
+<suite id="s1" name="Dexterslab-Robot-Testing" source="C:\Users\nn\dexterslab-robot-testing">
+<suite id="s1-s1" name="Button Functions" source="C:\Users\nn\dexterslab-robot-testing\button_functions.robot">
+<test id="s1-s1-t1" name="Testing Buttons functionality" line="12">
+<kw name="GIVEN the user opens up" owner="resource">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-09-17T15:39:49.803281" level="INFO">{"browser": "firefox", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\nn\\dexterslab-robot-testing\\results\\browser\\traces\\a33080a7-396c-43b6-9ad3-2ef92697d67c"}</msg>
+<msg time="2024-09-17T15:39:51.150105" level="INFO">Successfully created browser with options: {"browser":"firefox","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\nn\\dexterslab-robot-testing\\results\\browser\\traces\\a33080a7-396c-43b6-9ad3-2ef92697d67c"}</msg>
+<arg>${browser}</arg>
+<arg>headless=false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-09-17T15:39:49.801328" elapsed="1.349753"/>
+</kw>
+<arg>firefox</arg>
+<status status="PASS" start="2024-09-17T15:39:49.792030" elapsed="1.359051"/>
+</kw>
+<kw name="AND opens the Homepage of" owner="resource">
+<kw name="New Page" owner="Browser">
+<msg time="2024-09-17T15:40:17.210048" level="INFO">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg time="2024-09-17T15:40:17.211024" level="INFO">See also file:///C:/Users/nn/dexterslab-robot-testing/results/playwright-log.txt for additional details.</msg>
+<msg time="2024-09-17T15:40:17.211999" level="FAIL">Execution terminated by signal</msg>
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="FAIL" start="2024-09-17T15:39:51.216530" elapsed="26.010121">Execution terminated by signal</status>
+</kw>
+<arg>http://192.168.178.53:5000</arg>
+<status status="FAIL" start="2024-09-17T15:39:51.207224" elapsed="26.020392">Execution terminated by signal</status>
+</kw>
+<kw name="AND the title of the frontpage's browser-tab is" owner="resource">
+<arg>Homeoffice 2024</arg>
+<status status="NOT RUN" start="2024-09-17T15:40:17.239326" elapsed="0.002931"/>
+</kw>
+<kw name="WHEN the user clicks the button in the left corner" owner="resource">
+<status status="NOT RUN" start="2024-09-17T15:40:17.250063" elapsed="0.003903"/>
+</kw>
+<kw name="AND clicks on the menu-link &quot;Men in Homeoffice Data&quot;" owner="resource">
+<status status="NOT RUN" start="2024-09-17T15:40:17.258846" elapsed="0.001953"/>
+</kw>
+<kw name="THEN a page opens up with the headline" owner="resource">
+<arg>Men in Homeoffice Data</arg>
+<status status="NOT RUN" start="2024-09-17T15:40:17.267632" elapsed="0.002928"/>
+</kw>
+<kw name="AND the title of the tab is" owner="resource">
+<arg>Men in Homeoffice Data</arg>
+<status status="NOT RUN" start="2024-09-17T15:40:17.274462" elapsed="0.001952"/>
+</kw>
+<kw name="WHEN the user clicks on the button &quot;Create Record&quot;" owner="resource">
+<status status="NOT RUN" start="2024-09-17T15:40:17.290081" elapsed="0.004877"/>
+</kw>
+<kw name="THEN a Popup Window is openning up with the headline" owner="resource">
+<arg>Edit Row</arg>
+<status status="NOT RUN" start="2024-09-17T15:40:17.303742" elapsed="0.004881"/>
+</kw>
+<kw name="AND there is a textfield with the label" owner="resource">
+<arg>Id:</arg>
+<status status="NOT RUN" start="2024-09-17T15:40:17.310585" elapsed="0.001940"/>
+</kw>
+<kw name="AND there is a second textfield with the label" owner="resource">
+<arg>Aspekt:</arg>
+<status status="NOT RUN" start="2024-09-17T15:40:17.323262" elapsed="0.002929"/>
+</kw>
+<kw name="AND there is a third textfield with the label" owner="resource">
+<arg>Value:</arg>
+<status status="NOT RUN" start="2024-09-17T15:40:17.330097" elapsed="0.011709"/>
+</kw>
+<kw name="AND below the textfields there is a button" owner="resource">
+<arg>Create Record</arg>
+<status status="NOT RUN" start="2024-09-17T15:40:17.345712" elapsed="0.008782"/>
+</kw>
+<kw name="AND there is a button" owner="resource">
+<arg>Cancel</arg>
+<status status="NOT RUN" start="2024-09-17T15:40:17.360351" elapsed="0.009761"/>
+</kw>
+<kw name="WHEN the user adds a Number to the Id-textfield" owner="resource">
+<status status="NOT RUN" start="2024-09-17T15:40:17.376942" elapsed="0.010741"/>
+</kw>
+<kw name="AND adds the text-value to the Aspekt-textfield" owner="resource">
+<arg>Männer, die kein Homeoffice machen wollen"</arg>
+<status status="NOT RUN" start="2024-09-17T15:40:17.393535" elapsed="0.008793"/>
+</kw>
+<kw name="AND adds the percentage to the Value-textfield" owner="resource">
+<arg>2%</arg>
+<status status="NOT RUN" start="2024-09-17T15:40:17.409153" elapsed="0.001948"/>
+</kw>
+<kw name="AND clicks on the Button &quot;Create Record&quot;" owner="resource">
+<status status="NOT RUN" start="2024-09-17T15:40:17.420862" elapsed="0.003910"/>
+</kw>
+<kw name="THEN the Popup is no longer diplayed on the page" owner="resource">
+<status status="NOT RUN" start="2024-09-17T15:40:17.426718" elapsed="0.001951"/>
+</kw>
+<kw name="AND after two seconds the new text-entry appears" owner="resource">
+<status status="NOT RUN" start="2024-09-17T15:40:17.436479" elapsed="0.001951"/>
+</kw>
+<doc>a test for table pages create button</doc>
+<status status="FAIL" start="2024-09-17T15:39:49.778366" elapsed="27.664949">Execution terminated by signal</status>
+</test>
+<doc>Button functions of dexterslab table page
+Testing the buttons functionalities of the
+dexterslab table page</doc>
+<status status="FAIL" start="2024-09-17T15:39:47.080794" elapsed="30.398643"/>
+</suite>
+<status status="FAIL" start="2024-09-17T15:39:46.993411" elapsed="30.494797"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Dexterslab-Robot-Testing">Dexterslab-Robot-Testing</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Button Functions">Dexterslab-Robot-Testing.Button Functions</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-09-17T15:40:17.476495" level="ERROR">Calling method '_end_test' of listener 'Browser' failed: ConnectionError: Playwright process has been terminated with code 130</msg>
+<msg time="2024-09-17T15:40:17.485280" level="ERROR">Calling method '_end_suite' of listener 'Browser' failed: ConnectionError: Playwright process has been terminated with code 130</msg>
+</errors>
+</robot>

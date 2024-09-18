@@ -26,14 +26,14 @@ Testing Buttons functionality
     AND below the textfields there is a button  Create Record
     AND there is a button   Cancel
     WHEN the user adds a Number to the Id-textfield
-    AND adds the text-value to the Aspekt-textfield   Männer, die kein Homeoffice machen wollen" 
+    AND adds the text-value to the Aspekt-textfield   Männer, die kein Homeoffice machen wollen
     AND adds the percentage to the Value-textfield   2%
     AND clicks on the Button "Create Record"
     THEN the Popup is no longer diplayed on the page
     AND after two seconds the new text-entry appears 
-    #AND the last row "Id"-column has now new   Id-text-entry
-    #AND the last row "Aspekt"-column has now the text-entry:   "Männer, die kein Homeoffice machen wollen"
-    #AND the last row "Value"-column has now the text-entry:   "2%"
-    #WHEN the user clicks on the trash-button on the right of the entry-row
-    #AND the user accepts the alert that is poping up
-    #THEN the according entry will be deleted from the table
+    AND the last row "Id"-column has now new text-entry:     4
+    AND the last row "Aspekt"-column has now the text-entry:   Männer, die kein Homeoffice machen wollen
+    AND the last row "Value"-column has now the text-entry:   2%
+    WHEN the user clicks on the trash-button in the new row
+    AND the user accepts the alert that is poping up
+    THEN the according entry will be deleted from the table

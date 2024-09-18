@@ -137,3 +137,30 @@ the Popup is no longer diplayed on the page
 
 after two seconds the new text-entry appears
     Wait For Elements State    xpath=/html/body/div[4]/table/tbody/tr[5]    visible
+
+the last row "Id"-column has now new text-entry:
+    [Arguments]     ${text_entry}
+    ${entry}=       Get Text    xpath=/html/body/div[4]/table/tbody/tr[5]/td[1]
+    Should Be Equal AS Strings      ${entry}    ${text_entry}
+
+the last row "Aspekt"-column has now the text-entry:
+    [Arguments]     ${text_entry}
+    ${entry}=       Get Text    xpath=/html/body/div[4]/table/tbody/tr[5]/td[2]
+    Should Be Equal AS Strings      ${entry}    ${text_entry}
+
+the last row "Value"-column has now the text-entry:
+    [Arguments]     ${text_entry}
+    ${entry}=       Get Text    xpath=/html/body/div[4]/table/tbody/tr[5]/td[3]
+    Should Be Equal AS Strings      ${entry}    ${text_entry}
+
+the user clicks on the trash-button in the new row
+    Wait For Elements State    xpath=/html/body/div[4]/table/tbody/tr[5]/td[5]/button/i   attached
+    
+
+the user accepts the alert that is poping up
+    Handle Future Dialogs    action=accept
+    Browser.Click      xpath=/html/body/div[4]/table/tbody/tr[5]/td[5]/button/i  
+    Sleep   3s
+
+the according entry will be deleted from the table
+    Wait For Elements State   xpath=/html/body/div[4]/table/tbody/tr[5]    detached
