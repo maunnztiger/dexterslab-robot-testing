@@ -6,7 +6,7 @@ Documentation   ressources for all test Cases
 *** Keywords ***
 the user opens up 
     [Arguments]     ${browser}
-    Browser.New Browser     ${browser}  headless=false
+    Browser.New Browser     ${browser}  headless=true
 
 opens the Homepage of
     [Arguments]    ${URL}
