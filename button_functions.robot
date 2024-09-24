@@ -7,6 +7,9 @@ Documentation   Button functions of dexterslab table page
 Library         Browser  # Lädt die Browser-Library
 Resource        resource.robot
 
+*** Variables ***
+${aspectcolumn_textcontent}     Männer, die prinzipiell kein Homeoffice machen wollen
+${valuecolumn_textcontent}      2%
 
 *** Test Cases ***
 Testing Create Button functionality
@@ -49,15 +52,14 @@ Testing Edit Button functionality
     AND the title of the tab is   Men in Homeoffice Data
     WHEN the user clicks on the pencil button on the right of a row
     THEN a Popup Window is openning up with the headline   Edit Row
-    AND there is a textfield with the label   Aspekt:
-    AND there is a second textfield with the label    Value:
-    AND below the textfields there is a button  Save Changes
+    AND there is a aspekt-textfield with the label   Aspekt:
+    AND there is a value-textfield with the label    Value:
+    AND below the textfields there is a save-button  Save Changes
     AND there is a button   Cancel
     AND the textcontent of the columns are given in the Popup-textfields
-    WHEN the user changes the textcontent of the Value-textfield to     4%
+    When the user clears the according textfields
+    AND adds the value to the Aspekt-textfield    Männer, die prinzipiell kein Homeoffice machen wollen
+    AND adds the value to the Value-textfield     2%
     AND clicks on the button "Save Changes"
-    THEN the according row has new textentries in the according columns 
-    WHEN the user clicks on the pencil button on the right of a row
-    WHEN the user changes the textcontent of the Value-textfield to     2%
-    AND clicks on the button "Save Changes"
-    THEN the according row has new textentries in the according columns 
+    THEN the fourth row "Aspekt"-column has now the text-entry:       Männer, die prinzipiell kein Homeoffice machen wollen  
+    AND the fourth row "Value"-column has now the text-entry:   2%

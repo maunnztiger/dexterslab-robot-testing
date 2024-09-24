@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation   ressources for all test Cases
-...             providing all test cases with 
-...             variables and keywords
+...             providing all BDD test phrases with 
+...             keywords
 
 *** Keywords ***
 the user opens up 
@@ -159,8 +159,60 @@ the user clicks on the trash-button in the new row
 
 the user accepts the alert that is poping up
     Handle Future Dialogs    action=accept
-    Browser.Click      xpath=/html/body/div[4]/table/tbody/tr[5]/td[5]/button/i  
+    Browser.Click       xpath=/html/body/div[4]/table/tbody/tr[5]/td[5]/button/i  
     Sleep   3s
 
 the according entry will be deleted from the table
     Wait For Elements State   xpath=/html/body/div[4]/table/tbody/tr[5]    detached
+
+the user clicks on the pencil button on the right of a row
+    Browser.Click       xpath=/html/body/div[4]/table/tbody/tr[4]/td[4]/i
+
+the textcontent of the columns are given in the Popup-textfields
+    ${aspect_text}=       Get Text      xpath=//*[@id="aspect"]
+    ${value_text}=        Get Text      xpath=//*[@id="value"] 
+    Should Be Equal AS Strings      ${aspect_text}    ${aspectcolumn_textcontent}
+    Should Be Equal AS Strings      ${value_text}    ${valuecolumn_textcontent}
+
+there is a aspekt-textfield with the label
+    [Arguments]     ${label_text}
+    ${label} =   Get Text   xpath=/html/body/div[7]/div[1]/label[2]
+    Should Be Equal AS Strings      ${label}   ${label_text}
+
+there is a value-textfield with the label
+    [Arguments]     ${label_text}
+    ${label} =   Get Text   xpath=/html/body/div[7]/div[1]/label[3]
+    Should Be Equal AS Strings      ${label}   ${label_text}
+
+below the textfields there is a save-button
+    [Arguments]     ${button_text}
+    ${button} =   Get Text    xpath=/html/body/div[5]/div[2]/button[1]
+    Should Be Equal AS Strings      ${button}   ${button_text}
+
+the user clears the according textfields
+    Type Text    xpath=//*[@id="aspect"]   ${EMPTY}
+    Sleep  1s
+    Type Text    xpath=//*[@id="value"]   ${EMPTY}
+    Sleep   1s
+
+clicks on the button "Save Changes"
+    Browser.Click       xpath=/html/body/div[5]/div[2]/button[1]
+    Sleep    1s
+
+adds the value to the Aspekt-textfield
+    [Arguments]     ${aspect_text}
+    Type Text    xpath=//*[@id="aspect"]   ${aspect_text}
+
+adds the value to the Value-textfield
+    [Arguments]     ${value_text}
+    Type Text    xpath=//*[@id="value"]   ${value_text}
+
+the fourth row "Aspekt"-column has now the text-entry:
+    [Arguments]     ${column_text}
+    ${text} =   Get Text    xpath=/html/body/div[4]/table/tbody/tr[4]/td[2]
+    Should Be Equal AS Strings      ${text}   ${column_text}
+
+the fourth row "Value"-column has now the text-entry:
+    [Arguments]     ${column_text}
+    ${text} =   Get Text    xpath=/html/body/div[4]/table/tbody/tr[4]/td[3]
+    Should Be Equal AS Strings      ${text}   ${column_text}

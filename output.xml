@@ -1,477 +1,863 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.11.9 on win32)" generated="2024-09-18T09:10:56.249639" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1 (Python 3.11.9 on win32)" generated="2024-09-24T13:21:01.059006" rpa="false" schemaversion="5">
 <suite id="s1" name="Button Functions" source="C:\Users\nn\dexterslab-robot-testing\button_functions.robot">
-<test id="s1-t1" name="Testing Buttons functionality" line="12">
+<test id="s1-t1" name="Testing Create Button functionality" line="15">
 <kw name="GIVEN the user opens up" owner="resource">
 <kw name="New Browser" owner="Browser">
-<msg time="2024-09-18T09:10:58.779353" level="INFO">{"browser": "firefox", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\nn\\dexterslab-robot-testing\\browser\\traces\\a0bda30f-f584-4698-8f4e-e3dec5120684"}</msg>
-<msg time="2024-09-18T09:11:00.689189" level="INFO">Successfully created browser with options: {"browser":"firefox","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\nn\\dexterslab-robot-testing\\browser\\traces\\a0bda30f-f584-4698-8f4e-e3dec5120684"}</msg>
+<msg time="2024-09-24T13:21:02.508794" level="INFO">{"browser": "firefox", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\nn\\dexterslab-robot-testing\\browser\\traces\\63192104-68c1-4503-8689-956290ffce12"}</msg>
+<msg time="2024-09-24T13:21:04.046708" level="INFO">Successfully created browser with options: {"browser":"firefox","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\nn\\dexterslab-robot-testing\\browser\\traces\\63192104-68c1-4503-8689-956290ffce12"}</msg>
 <arg>${browser}</arg>
 <arg>headless=false</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2024-09-18T09:10:58.776416" elapsed="1.912773"/>
+<status status="PASS" start="2024-09-24T13:21:02.507819" elapsed="1.539865"/>
 </kw>
 <arg>firefox</arg>
-<status status="PASS" start="2024-09-18T09:10:58.774466" elapsed="1.914723"/>
+<status status="PASS" start="2024-09-24T13:21:02.506846" elapsed="1.540838"/>
 </kw>
 <kw name="AND opens the Homepage of" owner="resource">
 <kw name="New Page" owner="Browser">
-<msg time="2024-09-18T09:11:04.770316" level="INFO">Successfully initialized new page object and opened url: http://192.168.178.53:5000</msg>
-<msg time="2024-09-18T09:11:04.770316" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<msg time="2024-09-24T13:21:07.519822" level="INFO">Successfully initialized new page object and opened url: http://192.168.178.53:5000</msg>
+<msg time="2024-09-24T13:21:07.520821" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
 <arg>${URL}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="PASS" start="2024-09-18T09:11:00.706298" elapsed="4.064018"/>
+<status status="PASS" start="2024-09-24T13:21:04.136617" elapsed="3.384204"/>
 </kw>
 <arg>http://192.168.178.53:5000</arg>
-<status status="PASS" start="2024-09-18T09:11:00.704347" elapsed="4.066945"/>
+<status status="PASS" start="2024-09-24T13:21:04.134664" elapsed="3.386157"/>
 </kw>
 <kw name="AND the title of the frontpage's browser-tab is" owner="resource">
 <kw name="Get Title" owner="Browser">
-<msg time="2024-09-18T09:11:05.003415" level="INFO">Title: 'Homeoffice 2024'</msg>
-<msg time="2024-09-18T09:11:05.003415" level="INFO">${page_title} = Homeoffice 2024</msg>
+<msg time="2024-09-24T13:21:07.568694" level="INFO">Title: 'Homeoffice 2024'</msg>
+<msg time="2024-09-24T13:21:07.569670" level="INFO">${page_title} = Homeoffice 2024</msg>
 <var>${page_title}</var>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns the title of the current page.</doc>
-<status status="PASS" start="2024-09-18T09:11:04.864663" elapsed="0.138752"/>
+<status status="PASS" start="2024-09-24T13:21:07.535956" elapsed="0.033714"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${page_title}</arg>
 <arg>${tabtitle_1}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-09-18T09:11:05.004391" elapsed="0.000000"/>
+<status status="PASS" start="2024-09-24T13:21:07.569670" elapsed="0.000977"/>
 </kw>
 <arg>Homeoffice 2024</arg>
-<status status="PASS" start="2024-09-18T09:11:04.862839" elapsed="0.142528"/>
+<status status="PASS" start="2024-09-24T13:21:07.534980" elapsed="0.035667"/>
 </kw>
 <kw name="WHEN the user clicks the button in the left corner" owner="resource">
 <kw name="Click" owner="Browser">
-<msg time="2024-09-18T09:11:05.089409" level="INFO">Clicks the element 'id=menuButton'.</msg>
+<msg time="2024-09-24T13:21:07.605834" level="INFO">Clicks the element 'id=menuButton'.</msg>
 <arg>id=menuButton</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:05.088433" elapsed="0.464069"/>
+<status status="PASS" start="2024-09-24T13:21:07.604856" elapsed="0.473899"/>
 </kw>
-<status status="PASS" start="2024-09-18T09:11:05.088433" elapsed="0.464069"/>
+<status status="PASS" start="2024-09-24T13:21:07.603880" elapsed="0.474875"/>
 </kw>
 <kw name="AND clicks on the menu-link &quot;Men in Homeoffice Data&quot;" owner="resource">
 <kw name="Click" owner="Browser">
-<msg time="2024-09-18T09:11:05.572019" level="INFO">Clicks the element 'id=data_men'.</msg>
+<msg time="2024-09-24T13:21:08.124676" level="INFO">Clicks the element 'id=data_men'.</msg>
 <arg>id=data_men</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:05.571044" elapsed="0.564958"/>
+<status status="PASS" start="2024-09-24T13:21:08.122725" elapsed="0.502137"/>
 </kw>
-<status status="PASS" start="2024-09-18T09:11:05.571044" elapsed="0.564958"/>
+<status status="PASS" start="2024-09-24T13:21:08.122725" elapsed="0.502137"/>
 </kw>
 <kw name="THEN a page opens up with the headline" owner="resource">
 <kw name="Get Text" owner="Browser">
-<msg time="2024-09-18T09:11:07.690529" level="INFO">Text: 'Men in Homeoffice Data'</msg>
-<msg time="2024-09-18T09:11:07.690529" level="INFO">${headline} = Men in Homeoffice Data</msg>
+<msg time="2024-09-24T13:21:09.862488" level="INFO">Text: 'Men in Homeoffice Data'</msg>
+<msg time="2024-09-24T13:21:09.862488" level="INFO">${headline} = Men in Homeoffice Data</msg>
 <var>${headline}</var>
 <arg>id=headline</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:06.185837" elapsed="1.504692"/>
+<status status="PASS" start="2024-09-24T13:21:08.643489" elapsed="1.218999"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${headline}</arg>
 <arg>${headline_text}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-09-18T09:11:07.690529" elapsed="0.000974"/>
+<status status="PASS" start="2024-09-24T13:21:09.863463" elapsed="0.000000"/>
 </kw>
 <arg>Men in Homeoffice Data</arg>
-<status status="PASS" start="2024-09-18T09:11:06.179007" elapsed="1.513471"/>
+<status status="PASS" start="2024-09-24T13:21:08.640477" elapsed="1.223963"/>
 </kw>
 <kw name="AND the title of the tab is" owner="resource">
 <kw name="Get Title" owner="Browser">
-<msg time="2024-09-18T09:11:07.715439" level="INFO">Title: 'Men in Homeoffice Data'</msg>
-<msg time="2024-09-18T09:11:07.715439" level="INFO">${page_title} = Men in Homeoffice Data</msg>
+<msg time="2024-09-24T13:21:09.875261" level="INFO">Title: 'Men in Homeoffice Data'</msg>
+<msg time="2024-09-24T13:21:09.876237" level="INFO">${page_title} = Men in Homeoffice Data</msg>
 <var>${page_title}</var>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns the title of the current page.</doc>
-<status status="PASS" start="2024-09-18T09:11:07.700285" elapsed="0.015154"/>
+<status status="PASS" start="2024-09-24T13:21:09.865415" elapsed="0.010822"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${page_title}</arg>
 <arg>${tabtitle_2}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-09-18T09:11:07.716416" elapsed="0.000000"/>
+<status status="PASS" start="2024-09-24T13:21:09.876237" elapsed="0.000980"/>
 </kw>
 <arg>Men in Homeoffice Data</arg>
-<status status="PASS" start="2024-09-18T09:11:07.699309" elapsed="0.018081"/>
+<status status="PASS" start="2024-09-24T13:21:09.864440" elapsed="0.012777"/>
 </kw>
 <kw name="WHEN the user clicks on the button &quot;Create Record&quot;" owner="resource">
 <kw name="Click" owner="Browser">
-<msg time="2024-09-18T09:11:07.730079" level="INFO">Clicks the element 'id=create_button'.</msg>
+<msg time="2024-09-24T13:21:09.880141" level="INFO">Clicks the element 'id=create_button'.</msg>
 <arg>id=create_button</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:07.729103" elapsed="0.253025"/>
+<status status="PASS" start="2024-09-24T13:21:09.878197" elapsed="0.099645"/>
 </kw>
-<status status="PASS" start="2024-09-18T09:11:07.728127" elapsed="0.254001"/>
+<status status="PASS" start="2024-09-24T13:21:09.878197" elapsed="0.100623"/>
 </kw>
 <kw name="THEN a Popup Window is openning up with the headline" owner="resource">
 <kw name="Get Text" owner="Browser">
-<msg time="2024-09-18T09:11:08.079910" level="INFO">Text: 'Edit Row'</msg>
-<msg time="2024-09-18T09:11:08.079910" level="INFO">${headline} = Edit Row</msg>
+<msg time="2024-09-24T13:21:10.042274" level="INFO">Text: 'Edit Row'</msg>
+<msg time="2024-09-24T13:21:10.042274" level="INFO">${headline} = Edit Row</msg>
 <var>${headline}</var>
 <arg>xpath=/html/body/div[7]/div[1]/h2</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:07.987981" elapsed="0.091929"/>
+<status status="PASS" start="2024-09-24T13:21:09.981747" elapsed="0.061488"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${headline}</arg>
 <arg>${headline_text}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-09-18T09:11:08.080887" elapsed="0.000000"/>
+<status status="PASS" start="2024-09-24T13:21:10.043235" elapsed="0.000000"/>
 </kw>
 <arg>Edit Row</arg>
-<status status="PASS" start="2024-09-18T09:11:07.987016" elapsed="0.094849"/>
+<status status="PASS" start="2024-09-24T13:21:09.980772" elapsed="0.062463"/>
 </kw>
 <kw name="AND there is a textfield with the label" owner="resource">
 <kw name="Get Text" owner="Browser">
-<msg time="2024-09-18T09:11:08.155218" level="INFO">Text: 'Id:'</msg>
-<msg time="2024-09-18T09:11:08.155218" level="INFO">${label} = Id:</msg>
+<msg time="2024-09-24T13:21:10.091060" level="INFO">Text: 'Id:'</msg>
+<msg time="2024-09-24T13:21:10.091060" level="INFO">${label} = Id:</msg>
 <var>${label}</var>
 <arg>xpath=/html/body/div[7]/div[1]/label[1]</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:08.097482" elapsed="0.057736"/>
+<status status="PASS" start="2024-09-24T13:21:10.045187" elapsed="0.045873"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${label}</arg>
 <arg>${label_text}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-09-18T09:11:08.155218" elapsed="0.000975"/>
+<status status="PASS" start="2024-09-24T13:21:10.092037" elapsed="0.000000"/>
 </kw>
 <arg>Id:</arg>
-<status status="PASS" start="2024-09-18T09:11:08.096504" elapsed="0.060671"/>
+<status status="PASS" start="2024-09-24T13:21:10.044210" elapsed="0.048800"/>
 </kw>
 <kw name="AND there is a second textfield with the label" owner="resource">
 <kw name="Get Text" owner="Browser">
-<msg time="2024-09-18T09:11:08.221121" level="INFO">Text: 'Aspekt:'</msg>
-<msg time="2024-09-18T09:11:08.221121" level="INFO">${label} = Aspekt:</msg>
+<msg time="2024-09-24T13:21:10.136947" level="INFO">Text: 'Aspekt:'</msg>
+<msg time="2024-09-24T13:21:10.137908" level="INFO">${label} = Aspekt:</msg>
 <var>${label}</var>
 <arg>xpath=/html/body/div[7]/div[1]/label[2]</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:08.163023" elapsed="0.059075"/>
+<status status="PASS" start="2024-09-24T13:21:10.093987" elapsed="0.043921"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${label}</arg>
 <arg>${label_text}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-09-18T09:11:08.222098" elapsed="0.000533"/>
+<status status="PASS" start="2024-09-24T13:21:10.137908" elapsed="0.000976"/>
 </kw>
 <arg>Aspekt:</arg>
-<status status="PASS" start="2024-09-18T09:11:08.162048" elapsed="0.060583"/>
+<status status="PASS" start="2024-09-24T13:21:10.093010" elapsed="0.045874"/>
 </kw>
 <kw name="AND there is a third textfield with the label" owner="resource">
 <kw name="Get Text" owner="Browser">
-<msg time="2024-09-18T09:11:08.274405" level="INFO">Text: 'Value:'</msg>
-<msg time="2024-09-18T09:11:08.275383" level="INFO">${label} = Value:</msg>
+<msg time="2024-09-24T13:21:10.177924" level="INFO">Text: 'Value:'</msg>
+<msg time="2024-09-24T13:21:10.178899" level="INFO">${label} = Value:</msg>
 <var>${label}</var>
 <arg>xpath=/html/body/div[7]/div[1]/label[3]</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:08.224562" elapsed="0.050821"/>
+<status status="PASS" start="2024-09-24T13:21:10.139859" elapsed="0.039040"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${label}</arg>
 <arg>${label_text}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-09-18T09:11:08.275383" elapsed="0.000976"/>
+<status status="PASS" start="2024-09-24T13:21:10.178899" elapsed="0.000975"/>
 </kw>
 <arg>Value:</arg>
-<status status="PASS" start="2024-09-18T09:11:08.224562" elapsed="0.051797"/>
+<status status="PASS" start="2024-09-24T13:21:10.139859" elapsed="0.040015"/>
 </kw>
 <kw name="AND below the textfields there is a button" owner="resource">
 <kw name="Get Text" owner="Browser">
-<msg time="2024-09-18T09:11:08.338416" level="INFO">Text: 'Create Record'</msg>
-<msg time="2024-09-18T09:11:08.338416" level="INFO">${button} = Create Record</msg>
+<msg time="2024-09-24T13:21:10.222819" level="INFO">Text: 'Create Record'</msg>
+<msg time="2024-09-24T13:21:10.223795" level="INFO">${button} = Create Record</msg>
 <var>${button}</var>
 <arg>xpath=/html/body/div[7]/div[2]/button[1]</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:08.284166" elapsed="0.054250"/>
+<status status="PASS" start="2024-09-24T13:21:10.182803" elapsed="0.040992"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${button}</arg>
 <arg>${button_text}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-09-18T09:11:08.338416" elapsed="0.000973"/>
+<status status="PASS" start="2024-09-24T13:21:10.223795" elapsed="0.000975"/>
 </kw>
 <arg>Create Record</arg>
-<status status="PASS" start="2024-09-18T09:11:08.283190" elapsed="0.056199"/>
+<status status="PASS" start="2024-09-24T13:21:10.181828" elapsed="0.042942"/>
 </kw>
 <kw name="AND there is a button" owner="resource">
 <kw name="Get Text" owner="Browser">
-<msg time="2024-09-18T09:11:08.391166" level="INFO">Text: 'Cancel'</msg>
-<msg time="2024-09-18T09:11:08.392141" level="INFO">${button} = Cancel</msg>
+<msg time="2024-09-24T13:21:10.265763" level="INFO">Text: 'Cancel'</msg>
+<msg time="2024-09-24T13:21:10.265763" level="INFO">${button} = Cancel</msg>
 <var>${button}</var>
 <arg>xpath=/html/body/div[7]/div[2]/button[2]</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:08.341339" elapsed="0.050802"/>
+<status status="PASS" start="2024-09-24T13:21:10.225748" elapsed="0.040015"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${button}</arg>
 <arg>${button_text}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-09-18T09:11:08.392141" elapsed="0.000977"/>
+<status status="PASS" start="2024-09-24T13:21:10.266739" elapsed="0.000977"/>
 </kw>
 <arg>Cancel</arg>
-<status status="PASS" start="2024-09-18T09:11:08.340362" elapsed="0.052756"/>
+<status status="PASS" start="2024-09-24T13:21:10.224770" elapsed="0.042946"/>
 </kw>
 <kw name="WHEN the user adds a Number to the Id-textfield" owner="resource">
 <kw name="Get Text" owner="Browser">
-<msg time="2024-09-18T09:11:08.455640" level="INFO">Text: '3'</msg>
-<msg time="2024-09-18T09:11:08.456611" level="INFO">${number} = 3</msg>
+<msg time="2024-09-24T13:21:10.306756" level="INFO">Text: '3'</msg>
+<msg time="2024-09-24T13:21:10.306756" level="INFO">${number} = 3</msg>
 <var>${number}</var>
 <arg>xpath=/html/body/div[4]/table/tbody/tr[4]/td[1]</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:08.400928" elapsed="0.055683"/>
+<status status="PASS" start="2024-09-24T13:21:10.268696" elapsed="0.039034"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-09-18T09:11:08.457589" level="INFO">${new_number} = 4</msg>
+<msg time="2024-09-24T13:21:10.307730" level="INFO">${new_number} = 4</msg>
 <var>${new_number}</var>
 <arg>int(${number})+1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-09-18T09:11:08.456611" elapsed="0.000978"/>
+<status status="PASS" start="2024-09-24T13:21:10.307730" elapsed="0.000976"/>
 </kw>
 <kw name="Type Text" owner="Browser">
-<msg time="2024-09-18T09:11:08.459542" level="INFO">Types the text '4' in the given field.</msg>
+<msg time="2024-09-24T13:21:10.309682" level="INFO">Types the text '4' in the given field.</msg>
 <arg>xpath=//*[@id="Id"]</arg>
 <arg>${new_number}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:08.458564" elapsed="0.083018"/>
+<status status="PASS" start="2024-09-24T13:21:10.308706" elapsed="0.069297"/>
 </kw>
-<status status="PASS" start="2024-09-18T09:11:08.399949" elapsed="0.141633"/>
+<status status="PASS" start="2024-09-24T13:21:10.268696" elapsed="0.109307"/>
 </kw>
 <kw name="AND adds the text-value to the Aspekt-textfield" owner="resource">
 <kw name="Type Text" owner="Browser">
-<msg time="2024-09-18T09:11:08.550366" level="INFO">Types the text 'Männer, die kein Homeoffice machen wollen' in the given field.</msg>
+<msg time="2024-09-24T13:21:10.380936" level="INFO">Types the text 'Männer, die kein Homeoffice machen wollen' in the given field.</msg>
 <arg>xpath=//*[@id="aspect2"]</arg>
 <arg>${aspekt_text}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:08.549391" elapsed="0.380779"/>
+<status status="PASS" start="2024-09-24T13:21:10.379954" elapsed="0.307491"/>
 </kw>
 <arg>Männer, die kein Homeoffice machen wollen</arg>
-<status status="PASS" start="2024-09-18T09:11:08.548416" elapsed="0.381754"/>
+<status status="PASS" start="2024-09-24T13:21:10.378980" elapsed="0.308465"/>
 </kw>
 <kw name="AND adds the percentage to the Value-textfield" owner="resource">
 <kw name="Type Text" owner="Browser">
-<msg time="2024-09-18T09:11:08.938043" level="INFO">Types the text '2%' in the given field.</msg>
+<msg time="2024-09-24T13:21:10.690372" level="INFO">Types the text '2%' in the given field.</msg>
 <arg>xpath=//*[@id="value2"]</arg>
 <arg>${value_text}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:08.937068" elapsed="0.134055"/>
+<status status="PASS" start="2024-09-24T13:21:10.689397" elapsed="0.081521"/>
 </kw>
 <arg>2%</arg>
-<status status="PASS" start="2024-09-18T09:11:08.936093" elapsed="0.136008"/>
+<status status="PASS" start="2024-09-24T13:21:10.688421" elapsed="0.082497"/>
 </kw>
 <kw name="AND clicks on the Button &quot;Create Record&quot;" owner="resource">
 <kw name="Click" owner="Browser">
-<msg time="2024-09-18T09:11:09.080884" level="INFO">Clicks the element 'xpath=/html/body/div[7]/div[2]/button[1]'.</msg>
+<msg time="2024-09-24T13:21:10.773846" level="INFO">Clicks the element 'xpath=/html/body/div[7]/div[2]/button[1]'.</msg>
 <arg>xpath=/html/body/div[7]/div[2]/button[1]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:09.079907" elapsed="0.161611"/>
+<status status="PASS" start="2024-09-24T13:21:10.772871" elapsed="0.167923"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-18T09:11:12.242745" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-09-24T13:21:13.942669" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-18T09:11:09.242495" elapsed="3.000250"/>
+<status status="PASS" start="2024-09-24T13:21:10.940794" elapsed="3.001875"/>
 </kw>
-<status status="PASS" start="2024-09-18T09:11:09.078929" elapsed="3.164795"/>
+<status status="PASS" start="2024-09-24T13:21:10.771896" elapsed="3.170773"/>
 </kw>
 <kw name="THEN the Popup is no longer diplayed on the page" owner="resource">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2024-09-18T09:11:12.323754" level="INFO">Waited for Element with selector xpath=//*[@id="popup2"] at state hidden</msg>
+<msg time="2024-09-24T13:21:13.995216" level="INFO">Waited for Element with selector xpath=//*[@id="popup2"] at state hidden</msg>
 <arg>xpath=//*[@id="popup2"]</arg>
 <arg>hidden</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2024-09-18T09:11:12.246651" elapsed="0.077103"/>
+<status status="PASS" start="2024-09-24T13:21:13.943487" elapsed="0.051729"/>
 </kw>
-<status status="PASS" start="2024-09-18T09:11:12.245674" elapsed="0.078080"/>
+<status status="PASS" start="2024-09-24T13:21:13.943487" elapsed="0.051729"/>
 </kw>
 <kw name="AND after two seconds the new text-entry appears" owner="resource">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2024-09-18T09:11:12.342297" level="INFO">Waited for Element with selector xpath=/html/body/div[4]/table/tbody/tr[5] at state visible</msg>
+<msg time="2024-09-24T13:21:14.007900" level="INFO">Waited for Element with selector xpath=/html/body/div[4]/table/tbody/tr[5] at state visible</msg>
 <arg>xpath=/html/body/div[4]/table/tbody/tr[5]</arg>
 <arg>visible</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2024-09-18T09:11:12.324730" elapsed="0.018549"/>
+<status status="PASS" start="2024-09-24T13:21:13.996190" elapsed="0.012687"/>
 </kw>
-<status status="PASS" start="2024-09-18T09:11:12.324730" elapsed="0.019520"/>
+<status status="PASS" start="2024-09-24T13:21:13.996190" elapsed="0.012687"/>
 </kw>
 <kw name="AND the last row &quot;Id&quot;-column has now new text-entry:" owner="resource">
 <kw name="Get Text" owner="Browser">
-<msg time="2024-09-18T09:11:12.457022" level="INFO">Text: '4'</msg>
-<msg time="2024-09-18T09:11:12.457999" level="INFO">${entry} = 4</msg>
+<msg time="2024-09-24T13:21:14.080124" level="INFO">Text: '4'</msg>
+<msg time="2024-09-24T13:21:14.081133" level="INFO">${entry} = 4</msg>
 <var>${entry}</var>
 <arg>xpath=/html/body/div[4]/table/tbody/tr[5]/td[1]</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:12.351082" elapsed="0.106917"/>
+<status status="PASS" start="2024-09-24T13:21:14.009883" elapsed="0.071250"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${entry}</arg>
 <arg>${text_entry}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-09-18T09:11:12.457999" elapsed="0.000000"/>
+<status status="PASS" start="2024-09-24T13:21:14.081133" elapsed="0.000000"/>
 </kw>
 <arg>4</arg>
-<status status="PASS" start="2024-09-18T09:11:12.350107" elapsed="0.107892"/>
+<status status="PASS" start="2024-09-24T13:21:14.008877" elapsed="0.072256"/>
 </kw>
 <kw name="AND the last row &quot;Aspekt&quot;-column has now the text-entry:" owner="resource">
 <kw name="Get Text" owner="Browser">
-<msg time="2024-09-18T09:11:12.508752" level="INFO">Text: 'Männer, die kein Homeoffice machen wollen'</msg>
-<msg time="2024-09-18T09:11:12.509727" level="INFO">${entry} = Männer, die kein Homeoffice machen wollen</msg>
+<msg time="2024-09-24T13:21:14.117212" level="INFO">Text: 'Männer, die kein Homeoffice machen wollen'</msg>
+<msg time="2024-09-24T13:21:14.117212" level="INFO">${entry} = Männer, die kein Homeoffice machen wollen</msg>
 <var>${entry}</var>
 <arg>xpath=/html/body/div[4]/table/tbody/tr[5]/td[2]</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:12.458978" elapsed="0.050749"/>
+<status status="PASS" start="2024-09-24T13:21:14.082081" elapsed="0.035131"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${entry}</arg>
 <arg>${text_entry}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-09-18T09:11:12.509727" elapsed="0.000975"/>
+<status status="PASS" start="2024-09-24T13:21:14.117212" elapsed="0.000978"/>
 </kw>
 <arg>Männer, die kein Homeoffice machen wollen</arg>
-<status status="PASS" start="2024-09-18T09:11:12.458978" elapsed="0.051724"/>
+<status status="PASS" start="2024-09-24T13:21:14.082081" elapsed="0.036109"/>
 </kw>
 <kw name="AND the last row &quot;Value&quot;-column has now the text-entry:" owner="resource">
 <kw name="Get Text" owner="Browser">
-<msg time="2024-09-18T09:11:12.585363" level="INFO">Text: '2%'</msg>
-<msg time="2024-09-18T09:11:12.585363" level="INFO">${entry} = 2%</msg>
+<msg time="2024-09-24T13:21:14.153333" level="INFO">Text: '2%'</msg>
+<msg time="2024-09-24T13:21:14.153333" level="INFO">${entry} = 2%</msg>
 <var>${entry}</var>
 <arg>xpath=/html/body/div[4]/table/tbody/tr[5]/td[3]</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:12.514618" elapsed="0.070745"/>
+<status status="PASS" start="2024-09-24T13:21:14.119165" elapsed="0.035136"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${entry}</arg>
 <arg>${text_entry}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-09-18T09:11:12.586347" elapsed="0.000000"/>
+<status status="PASS" start="2024-09-24T13:21:14.154301" elapsed="0.000000"/>
 </kw>
 <arg>2%</arg>
-<status status="PASS" start="2024-09-18T09:11:12.511680" elapsed="0.075631"/>
+<status status="PASS" start="2024-09-24T13:21:14.118190" elapsed="0.036111"/>
 </kw>
 <kw name="WHEN the user clicks on the trash-button in the new row" owner="resource">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2024-09-18T09:11:12.606832" level="INFO">Waited for Element with selector xpath=/html/body/div[4]/table/tbody/tr[5]/td[5]/button/i at state attached</msg>
+<msg time="2024-09-24T13:21:14.167000" level="INFO">Waited for Element with selector xpath=/html/body/div[4]/table/tbody/tr[5]/td[5]/button/i at state attached</msg>
 <arg>xpath=/html/body/div[4]/table/tbody/tr[5]/td[5]/button/i</arg>
 <arg>attached</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2024-09-18T09:11:12.589263" elapsed="0.017569"/>
+<status status="PASS" start="2024-09-24T13:21:14.155277" elapsed="0.011723"/>
 </kw>
-<status status="PASS" start="2024-09-18T09:11:12.588307" elapsed="0.019502"/>
+<status status="PASS" start="2024-09-24T13:21:14.155277" elapsed="0.011723"/>
 </kw>
 <kw name="AND the user accepts the alert that is poping up" owner="resource">
 <kw name="Handle Future Dialogs" owner="Browser">
 <arg>action=accept</arg>
 <tag>PageContent</tag>
 <doc>Handle next dialog on page with ``action``.</doc>
-<status status="PASS" start="2024-09-18T09:11:12.610735" elapsed="0.012689"/>
+<status status="PASS" start="2024-09-24T13:21:14.167965" elapsed="0.007808"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-09-18T09:11:12.625376" level="INFO">Clicks the element 'xpath=/html/body/div[4]/table/tbody/tr[5]/td[5]/button/i'.</msg>
+<msg time="2024-09-24T13:21:14.176750" level="INFO">Clicks the element 'xpath=/html/body/div[4]/table/tbody/tr[5]/td[5]/button/i'.</msg>
 <arg>xpath=/html/body/div[4]/table/tbody/tr[5]/td[5]/button/i</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-09-18T09:11:12.623424" elapsed="0.429440"/>
+<status status="PASS" start="2024-09-24T13:21:14.176750" elapsed="0.230334"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-18T09:11:16.055580" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-09-24T13:21:17.408613" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-18T09:11:13.053841" elapsed="3.001739"/>
+<status status="PASS" start="2024-09-24T13:21:14.408061" elapsed="3.000552"/>
 </kw>
-<status status="PASS" start="2024-09-18T09:11:12.609763" elapsed="3.445817"/>
+<status status="PASS" start="2024-09-24T13:21:14.167000" elapsed="3.241613"/>
 </kw>
 <kw name="THEN the according entry will be deleted from the table" owner="resource">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2024-09-18T09:11:16.143935" level="INFO">Waited for Element with selector xpath=/html/body/div[4]/table/tbody/tr[5] at state detached</msg>
+<msg time="2024-09-24T13:21:17.466197" level="INFO">Waited for Element with selector xpath=/html/body/div[4]/table/tbody/tr[5] at state detached</msg>
 <arg>xpath=/html/body/div[4]/table/tbody/tr[5]</arg>
 <arg>detached</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2024-09-18T09:11:16.057502" elapsed="0.087409"/>
+<status status="PASS" start="2024-09-24T13:21:17.410565" elapsed="0.055632"/>
 </kw>
-<status status="PASS" start="2024-09-18T09:11:16.056522" elapsed="0.088389"/>
+<status status="PASS" start="2024-09-24T13:21:17.409589" elapsed="0.056608"/>
 </kw>
 <doc>a test for table pages create button</doc>
-<status status="PASS" start="2024-09-18T09:10:58.746124" elapsed="17.399768"/>
+<status status="PASS" start="2024-09-24T13:21:02.501929" elapsed="14.965244"/>
+</test>
+<test id="s1-t2" name="Testing Edit Button functionality" line="44">
+<kw name="Given the user opens up" owner="resource">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-09-24T13:21:17.865893" level="INFO">Switching browser to browser=46b2260b-7f63-4308-8de2-5332a5c7fe0f</msg>
+<msg time="2024-09-24T13:21:17.869798" level="INFO">Successfully changed active browser: browser=46b2260b-7f63-4308-8de2-5332a5c7fe0f</msg>
+<msg time="2024-09-24T13:21:17.869798" level="INFO">Reusing existing browser with id: browser=46b2260b-7f63-4308-8de2-5332a5c7fe0f</msg>
+<arg>${browser}</arg>
+<arg>headless=false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-09-24T13:21:17.861990" elapsed="0.007808"/>
+</kw>
+<arg>firefox</arg>
+<status status="PASS" start="2024-09-24T13:21:17.861014" elapsed="0.009760"/>
+</kw>
+<kw name="AND opens the Homepage of" owner="resource">
+<kw name="New Page" owner="Browser">
+<msg time="2024-09-24T13:21:18.742857" level="INFO">Successfully initialized new page object and opened url: http://192.168.178.53:5000</msg>
+<msg time="2024-09-24T13:21:18.742857" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-09-24T13:21:17.873701" elapsed="0.870132"/>
+</kw>
+<arg>http://192.168.178.53:5000</arg>
+<status status="PASS" start="2024-09-24T13:21:17.872727" elapsed="0.871106"/>
+</kw>
+<kw name="AND the title of the frontpage's browser-tab is" owner="resource">
+<kw name="Get Title" owner="Browser">
+<msg time="2024-09-24T13:21:18.845968" level="INFO">Title: 'Homeoffice 2024'</msg>
+<msg time="2024-09-24T13:21:18.846943" level="INFO">${page_title} = Homeoffice 2024</msg>
+<var>${page_title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2024-09-24T13:21:18.767309" elapsed="0.079634"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${page_title}</arg>
+<arg>${tabtitle_1}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-24T13:21:18.847929" elapsed="0.000966"/>
+</kw>
+<arg>Homeoffice 2024</arg>
+<status status="PASS" start="2024-09-24T13:21:18.766333" elapsed="0.082562"/>
+</kw>
+<kw name="WHEN the user clicks the button in the left corner" owner="resource">
+<kw name="Click" owner="Browser">
+<msg time="2024-09-24T13:21:18.852802" level="INFO">Clicks the element 'id=menuButton'.</msg>
+<arg>id=menuButton</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-24T13:21:18.852802" elapsed="0.216087"/>
+</kw>
+<status status="PASS" start="2024-09-24T13:21:18.851826" elapsed="0.218037"/>
+</kw>
+<kw name="AND clicks on the menu-link &quot;Men in Homeoffice Data&quot;" owner="resource">
+<kw name="Click" owner="Browser">
+<msg time="2024-09-24T13:21:19.074743" level="INFO">Clicks the element 'id=data_men'.</msg>
+<arg>id=data_men</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-24T13:21:19.073773" elapsed="0.403517"/>
+</kw>
+<status status="PASS" start="2024-09-24T13:21:19.072793" elapsed="0.404497"/>
+</kw>
+<kw name="THEN a page opens up with the headline" owner="resource">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-24T13:21:20.434789" level="INFO">Text: 'Men in Homeoffice Data'</msg>
+<msg time="2024-09-24T13:21:20.434789" level="INFO">${headline} = Men in Homeoffice Data</msg>
+<var>${headline}</var>
+<arg>id=headline</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-24T13:21:19.480229" elapsed="0.954560"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${headline}</arg>
+<arg>${headline_text}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.434789" elapsed="0.000974"/>
+</kw>
+<arg>Men in Homeoffice Data</arg>
+<status status="PASS" start="2024-09-24T13:21:19.478280" elapsed="0.957483"/>
+</kw>
+<kw name="AND the title of the tab is" owner="resource">
+<kw name="Get Title" owner="Browser">
+<msg time="2024-09-24T13:21:20.453843" level="INFO">Title: 'Men in Homeoffice Data'</msg>
+<msg time="2024-09-24T13:21:20.453843" level="INFO">${page_title} = Men in Homeoffice Data</msg>
+<var>${page_title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.439664" elapsed="0.014179"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${page_title}</arg>
+<arg>${tabtitle_2}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.453843" elapsed="0.000975"/>
+</kw>
+<arg>Men in Homeoffice Data</arg>
+<status status="PASS" start="2024-09-24T13:21:20.438688" elapsed="0.017107"/>
+</kw>
+<kw name="WHEN the user clicks on the pencil button on the right of a row" owner="resource">
+<kw name="Click" owner="Browser">
+<msg time="2024-09-24T13:21:20.460674" level="INFO">Clicks the element 'xpath=/html/body/div[4]/table/tbody/tr[4]/td[4]/i'.</msg>
+<arg>xpath=/html/body/div[4]/table/tbody/tr[4]/td[4]/i</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.459699" elapsed="0.139394"/>
+</kw>
+<status status="PASS" start="2024-09-24T13:21:20.458739" elapsed="0.141331"/>
+</kw>
+<kw name="THEN a Popup Window is openning up with the headline" owner="resource">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-24T13:21:20.682252" level="INFO">Text: 'Edit Row'</msg>
+<msg time="2024-09-24T13:21:20.683228" level="INFO">${headline} = Edit Row</msg>
+<var>${headline}</var>
+<arg>xpath=/html/body/div[7]/div[1]/h2</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.627457" elapsed="0.055771"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${headline}</arg>
+<arg>${headline_text}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.683228" elapsed="0.000975"/>
+</kw>
+<arg>Edit Row</arg>
+<status status="PASS" start="2024-09-24T13:21:20.626481" elapsed="0.057722"/>
+</kw>
+<kw name="AND there is a aspekt-textfield with the label" owner="resource">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-24T13:21:20.750502" level="INFO">Text: 'Aspekt:'</msg>
+<msg time="2024-09-24T13:21:20.751481" level="INFO">${label} = Aspekt:</msg>
+<var>${label}</var>
+<arg>xpath=/html/body/div[7]/div[1]/label[2]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.686158" elapsed="0.065323"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${label}</arg>
+<arg>${label_text}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.751481" elapsed="0.000974"/>
+</kw>
+<arg>Aspekt:</arg>
+<status status="PASS" start="2024-09-24T13:21:20.686158" elapsed="0.066297"/>
+</kw>
+<kw name="AND there is a value-textfield with the label" owner="resource">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-24T13:21:20.803431" level="INFO">Text: 'Value:'</msg>
+<msg time="2024-09-24T13:21:20.803431" level="INFO">${label} = Value:</msg>
+<var>${label}</var>
+<arg>xpath=/html/body/div[7]/div[1]/label[3]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.754407" elapsed="0.049024"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${label}</arg>
+<arg>${label_text}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.804386" elapsed="0.000976"/>
+</kw>
+<arg>Value:</arg>
+<status status="PASS" start="2024-09-24T13:21:20.753431" elapsed="0.051931"/>
+</kw>
+<kw name="AND below the textfields there is a save-button" owner="resource">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-24T13:21:20.859357" level="INFO">Text: 'Save Changes'</msg>
+<msg time="2024-09-24T13:21:20.859357" level="INFO">${button} = Save Changes</msg>
+<var>${button}</var>
+<arg>xpath=/html/body/div[5]/div[2]/button[1]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.809268" elapsed="0.050089"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${button}</arg>
+<arg>${button_text}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.860333" elapsed="0.000000"/>
+</kw>
+<arg>Save Changes</arg>
+<status status="PASS" start="2024-09-24T13:21:20.809268" elapsed="0.051065"/>
+</kw>
+<kw name="AND there is a button" owner="resource">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-24T13:21:20.910157" level="INFO">Text: 'Cancel'</msg>
+<msg time="2024-09-24T13:21:20.910157" level="INFO">${button} = Cancel</msg>
+<var>${button}</var>
+<arg>xpath=/html/body/div[7]/div[2]/button[2]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.862808" elapsed="0.047349"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${button}</arg>
+<arg>${button_text}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.911133" elapsed="0.000000"/>
+</kw>
+<arg>Cancel</arg>
+<status status="PASS" start="2024-09-24T13:21:20.861309" elapsed="0.049824"/>
+</kw>
+<kw name="AND the textcontent of the columns are given in the Popup-textfields" owner="resource">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-24T13:21:20.957980" level="INFO">Text: 'Männer, die prinzipiell kein Homeoffice machen wollen'</msg>
+<msg time="2024-09-24T13:21:20.957980" level="INFO">${aspect_text} = Männer, die prinzipiell kein Homeoffice machen wollen</msg>
+<var>${aspect_text}</var>
+<arg>xpath=//*[@id="aspect"]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.914061" elapsed="0.043919"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-24T13:21:20.994095" level="INFO">Text: '2%'</msg>
+<msg time="2024-09-24T13:21:20.994095" level="INFO">${value_text} = 2%</msg>
+<var>${value_text}</var>
+<arg>xpath=//*[@id="value"]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.958956" elapsed="0.035139"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${aspect_text}</arg>
+<arg>${aspectcolumn_textcontent}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.995068" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${value_text}</arg>
+<arg>${valuecolumn_textcontent}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.996044" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-09-24T13:21:20.913084" elapsed="0.083936"/>
+</kw>
+<kw name="When the user clears the according textfields" owner="resource">
+<kw name="Type Text" owner="Browser">
+<msg time="2024-09-24T13:21:20.999948" level="INFO">Types the text '' in the given field.</msg>
+<arg>xpath=//*[@id="aspect"]</arg>
+<arg>${EMPTY}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-09-24T13:21:20.997997" elapsed="0.081007"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-24T13:21:22.082503" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-24T13:21:21.080971" elapsed="1.001532"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2024-09-24T13:21:22.083318" level="INFO">Types the text '' in the given field.</msg>
+<arg>xpath=//*[@id="value"]</arg>
+<arg>${EMPTY}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-09-24T13:21:22.082503" elapsed="0.056445"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-24T13:21:23.140888" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-24T13:21:22.139924" elapsed="1.000964"/>
+</kw>
+<status status="PASS" start="2024-09-24T13:21:20.997997" elapsed="2.142891"/>
+</kw>
+<kw name="AND adds the value to the Aspekt-textfield" owner="resource">
+<kw name="Type Text" owner="Browser">
+<msg time="2024-09-24T13:21:23.142683" level="INFO">Types the text 'Männer, die prinzipiell kein Homeoffice machen wollen' in the given field.</msg>
+<arg>xpath=//*[@id="aspect"]</arg>
+<arg>${aspect_text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-09-24T13:21:23.141709" elapsed="0.344288"/>
+</kw>
+<arg>Männer, die prinzipiell kein Homeoffice machen wollen</arg>
+<status status="PASS" start="2024-09-24T13:21:23.141709" elapsed="0.344288"/>
+</kw>
+<kw name="AND adds the value to the Value-textfield" owner="resource">
+<kw name="Type Text" owner="Browser">
+<msg time="2024-09-24T13:21:23.487948" level="INFO">Types the text '2%' in the given field.</msg>
+<arg>xpath=//*[@id="value"]</arg>
+<arg>${value_text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-09-24T13:21:23.486971" elapsed="0.084449"/>
+</kw>
+<arg>2%</arg>
+<status status="PASS" start="2024-09-24T13:21:23.486971" elapsed="0.085441"/>
+</kw>
+<kw name="AND clicks on the button &quot;Save Changes&quot;" owner="resource">
+<kw name="Click" owner="Browser">
+<msg time="2024-09-24T13:21:23.586062" level="INFO">Clicks the element 'xpath=/html/body/div[5]/div[2]/button[1]'.</msg>
+<arg>xpath=/html/body/div[5]/div[2]/button[1]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-24T13:21:23.585085" elapsed="0.125904"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-24T13:21:24.711344" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-24T13:21:23.710989" elapsed="1.000355"/>
+</kw>
+<status status="PASS" start="2024-09-24T13:21:23.585085" elapsed="1.126259"/>
+</kw>
+<kw name="THEN the fourth row &quot;Aspekt&quot;-column has now the text-entry:" owner="resource">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-24T13:21:25.034761" level="INFO">Text: 'Männer, die prinzipiell kein Homeoffice machen wollen'</msg>
+<msg time="2024-09-24T13:21:25.035738" level="INFO">${text} = Männer, die prinzipiell kein Homeoffice machen wollen</msg>
+<var>${text}</var>
+<arg>xpath=/html/body/div[4]/table/tbody/tr[4]/td[2]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-24T13:21:24.717707" elapsed="0.318031"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${column_text}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-24T13:21:25.035738" elapsed="0.000000"/>
+</kw>
+<arg>Männer, die prinzipiell kein Homeoffice machen wollen</arg>
+<status status="PASS" start="2024-09-24T13:21:24.716730" elapsed="0.319008"/>
+</kw>
+<kw name="AND the fourth row &quot;Value&quot;-column has now the text-entry:" owner="resource">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-24T13:21:25.077704" level="INFO">Text: '2%'</msg>
+<msg time="2024-09-24T13:21:25.077704" level="INFO">${text} = 2%</msg>
+<var>${text}</var>
+<arg>xpath=/html/body/div[4]/table/tbody/tr[4]/td[3]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-24T13:21:25.036712" elapsed="0.040992"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>${column_text}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-24T13:21:25.078680" elapsed="0.000982"/>
+</kw>
+<arg>2%</arg>
+<status status="PASS" start="2024-09-24T13:21:25.036712" elapsed="0.043922"/>
+</kw>
+<doc>a test for the tables pages edit button</doc>
+<status status="PASS" start="2024-09-24T13:21:17.801943" elapsed="7.280654"/>
 </test>
 <doc>Button functions of dexterslab table page
 Testing the buttons functionalities of the
 dexterslab table page</doc>
-<status status="PASS" start="2024-09-18T09:10:56.254524" elapsed="20.130482"/>
+<status status="PASS" start="2024-09-24T13:21:01.063885" elapsed="24.213101"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Button Functions">Button Functions</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="Button Functions">Button Functions</stat>
 </suite>
 </statistics>
 <errors>
