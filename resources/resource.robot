@@ -5,16 +5,19 @@ Documentation   ressources for all test Cases
 
 
 Library         JSONLibrary
+Library         ../Utils/json_utils.py
 
+*** Variables ***
+${TABLE_XPATH}      /html/body/div[4]/table 
+${JSON_FILE_PATH}   ${CURDIR}${/}data_men.json
 
 *** Keywords ***
 the user opens up 
     [Arguments]     ${browser}
     Browser.New Browser     ${browser}  headless=true
 
-opens the Homepage of
-    [Arguments]    ${URL}
-    ${file}     Load JSON From File     ${CURDIR}${/}resources/config.json
+opens the Homepage of dexterslab
+    ${file}     Load JSON From File     ${CURDIR}${/}config.json
     ${dexterslab_url}   Get Value From Json         ${file}     $.DEXTERSLAB_URL           
     New Page    ${dexterslab_url}[0]
 
@@ -222,3 +225,65 @@ the fourth row "Value"-column has now the text-entry:
     [Arguments]     ${column_text}
     ${text} =   Get Text    xpath=/html/body/div[4]/table/tbody/tr[4]/td[3]
     Should Be Equal AS Strings      ${text}   ${column_text}
+
+the page has a dropdown with selected number
+    [Arguments]     ${number}
+    ${dropdown_number} =   Get Text    xpath=/html/body/div[4]/div[1]/label/select/option[3]
+    Should Be Equal AS Strings      ${number}   ${dropdown_number}
+
+in the right corner the page contains a search bar
+    Wait For Elements State    xpath=/html/body/div[4]/div[2]/label/input   visible
+
+the page contains a dark blue colored button with the text
+    [Arguments]     ${button_text}
+    ${text} =   Get Text    xpath=//*[@id="returnButton"]
+    Should Be Equal AS Strings      ${text}   ${button_text}
+
+the page contains another blue button with the text
+    [Arguments]     ${button_text}
+    ${text} =   Get Text    xpath=//*[@id="create_button"]
+    Should Be Equal AS Strings      ${text}   ${button_text}
+
+the page contains a table with number of entries
+    [Arguments]     ${number_of_rows}
+    ${rows} =  get element count   xpath=/html/body/div[4]/table/tbody/tr
+    log to console  ${rows}
+    Should Be Equal AS Strings      ${rows}   ${number_of_rows}
+
+AND the table has number of columns
+    [Arguments]     ${number_of_rows}
+    ${rows} =  get element count   xpath=/html/body/div[4]/table/tbody/tr[1]/td
+    log to console  ${rows}
+    Should Be Equal AS Strings      ${rows}   ${number_of_rows}
+
+the first column has the title
+    [Arguments]     ${column_title}
+    ${title} =   Get Text    xpath=/html/body/div[4]/table/thead/tr/th[1]
+    Should Be Equal AS Strings      ${title}   ${column_title}
+
+the second column has the title
+    [Arguments]     ${column_title}
+    ${title} =   Get Text    xpath=/html/body/div[4]/table/thead/tr/th[2]
+    Should Be Equal AS Strings      ${title}   ${column_title}
+
+the third column has the title
+    [Arguments]     ${column_title}
+    ${title} =   Get Text    xpath=/html/body/div[4]/table/thead/tr/th[3]
+    Should Be Equal AS Strings      ${title}   ${column_title}
+
+the fourth column contains an edit-button and a delete-button
+    Wait For Elements State    xpath=/html/body/div[4]/table/tbody/tr[1]/td[4]/i            visible
+    Wait For Elements State    xpath=/html/body/div[4]/table/tbody/tr[1]/td[5]/button/i     visible
+
+the the rows have certain text-entries
+    ${file_path}   Set Variable    ${JSON_FILE_PATH}
+    
+    
+    ${file}     json_utils.Load Json Utf8    ${file_path}
+
+    ${data}=  evaluate    json.loads(json.dumps(${file}))    json
+    log to console  ${data}  
+    FOR    ${json}  IN   @{data}
+       
+        log to console  ${json}
+    END

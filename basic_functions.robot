@@ -5,7 +5,7 @@ Documentation   Basic functions of dexterslab Home Page
 ...             
 
 Library         Browser  # Lädt die Browser-Library
-Resource        resource.robot
+Resource        resources/resource.robot
 
 *** Variables ***
 ${URL}          http://192.168.178.53:5000
