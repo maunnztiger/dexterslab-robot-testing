@@ -4,7 +4,8 @@ Documentation   Button functions of dexterslab table page
 ...             dexterslab table page
 ...             
 
-Library         Browser  # Lädt die Browser-Library
+Library         Browser
+                
 Resource        resource.robot
 
 *** Variables ***
@@ -15,7 +16,7 @@ ${valuecolumn_textcontent}      2%
 Testing Create Button functionality
     [Documentation]   a test for table pages create button
     GIVEN the user opens up   firefox
-    AND opens the Homepage of   http://192.168.178.53:5000
+    AND opens the Homepage of   dexterslab
     AND the title of the frontpage's browser-tab is   Homeoffice 2024
     WHEN the user clicks the button in the left corner
     AND clicks on the menu-link "Men in Homeoffice Data"

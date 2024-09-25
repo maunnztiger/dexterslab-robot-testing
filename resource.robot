@@ -3,6 +3,10 @@ Documentation   ressources for all test Cases
 ...             providing all BDD test phrases with 
 ...             keywords
 
+
+Library         JSONLibrary
+
+
 *** Keywords ***
 the user opens up 
     [Arguments]     ${browser}
@@ -10,7 +14,9 @@ the user opens up
 
 opens the Homepage of
     [Arguments]    ${URL}
-    New Page    ${URL}
+    ${file}     Load JSON From File     ${CURDIR}${/}resources/config.json
+    ${dexterslab_url}   Get Value From Json         ${file}     $.DEXTERSLAB_URL           
+    New Page    ${dexterslab_url}[0]
 
 the title of the frontpage's browser-tab is
     [Arguments]      ${tabtitle_1}
