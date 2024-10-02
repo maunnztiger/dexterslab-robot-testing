@@ -24,7 +24,7 @@ ${linktext_8}   Text-Resourcen
 Testing Basic functionality
     [Documentation]   a test for home page main menu
     GIVEN the user opens up   firefox
-    AND opens the Homepgage of   http://192.168.178.53:5000
+    AND opens the Homepage of dexterslab
     AND the title of the frontpage's browser-tab is   Homeoffice 2024
     WHEN the user clicks the button in the left corner
     THEN there occurs a menu with a blue color
