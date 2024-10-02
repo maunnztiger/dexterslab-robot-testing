@@ -3,13 +3,15 @@ Documentation   ressources for all test Cases
 ...             providing all BDD test phrases with 
 ...             keywords
 
-
+Library         OperatingSystem
+Library         Collections
 Library         JSONLibrary
 Library         ../Utils/json_utils.py
 
 *** Variables ***
 ${TABLE_XPATH}      /html/body/div[4]/table 
 ${JSON_FILE_PATH}   ${CURDIR}${/}data_men.json
+${JSON_PATH}      ${CURDIR}${/}table.json
 
 *** Keywords ***
 the user opens up 
@@ -276,14 +278,46 @@ the fourth column contains an edit-button and a delete-button
     Wait For Elements State    xpath=/html/body/div[4]/table/tbody/tr[1]/td[5]/button/i     visible
 
 the the rows have certain text-entries
-    ${file_path}   Set Variable    ${JSON_FILE_PATH}
+    ${table_data}=       Create List
     
+    ${row1_col1}=    Get Text    xpath=${TABLE_XPATH}//tr[1]/td[1]
+    ${row1_col2}=    Get Text    xpath=${TABLE_XPATH}//tr[1]/td[2]
+    ${row1_col3}=    Get Text    xpath=${TABLE_XPATH}//tr[1]/td[3]
     
-    ${file}     json_utils.Load Json Utf8    ${file_path}
+    ${row_1}=    Create Dictionary    Id=0    Aspekt=${row1_col2}    Value=${row1_col3}
+    ${row_a}=    Evaluate       json.dumps(${row_1})
+    
+    ${row2_col1}=    Get Text    xpath=${TABLE_XPATH}//tr[2]/td[1]
+    ${row2_col2}=    Get Text    xpath=${TABLE_XPATH}//tr[2]/td[2]
+    ${row2_col3}=    Get Text    xpath=${TABLE_XPATH}//tr[2]/td[3]
+    
+    ${row_2}=    Create Dictionary    Id=1    Aspekt=${row2_col2}    Value=${row2_col3}
+    ${row_b}=    Evaluate       json.dumps(${row_2})
+    
+    ${row3_col1}=    Get Text    xpath=${TABLE_XPATH}//tr[3]/td[1]
+    ${row3_col2}=    Get Text    xpath=${TABLE_XPATH}//tr[3]/td[2]
+    ${row3_col3}=    Get Text    xpath=${TABLE_XPATH}//tr[3]/td[3]
 
-    ${data}=  evaluate    json.loads(json.dumps(${file}))    json
-    log to console  ${data}  
-    FOR    ${json}  IN   @{data}
-       
-        log to console  ${json}
-    END
+    ${row_3}=    Create Dictionary    Id=2    Aspekt=${row3_col2}    Value=${row3_col3}
+    ${row_c}=    Evaluate       json.dumps(${row_3})
+    
+    ${row4_col1}=    Get Text    xpath=${TABLE_XPATH}//tr[4]/td[1]
+    ${row4_col2}=    Get Text    xpath=${TABLE_XPATH}//tr[4]/td[2]
+    ${row4_col3}=    Get Text    xpath=${TABLE_XPATH}//tr[4]/td[3]
+
+    ${row_4}=    Create Dictionary    Id=3    Aspekt=${row4_col2}    Value=${row4_col3}
+    ${row_d}=    Evaluate       json.dumps(${row_4}, ensure_ascii=False, indent=4)
+    
+    
+    Append To List    ${table_data}    ${row_a}
+    Append To List    ${table_data}    ${row_b}
+    Append To List    ${table_data}    ${row_c}
+    Append To List    ${table_data}    ${row_d}
+    ${json_data}=    Convert To String    ${table_data}
+    ${valid_json_data}=    json_utils.convert_to_json_string   ${json_data}
+    Create File    ${JSON_PATH}    ${valid_json_data}
+    
+    ${file_path}   Set Variable    ${JSON_FILE_PATH}
+    json_utils.verify_json_data    ${JSON_PATH}   ${file_path}
+
+    
