@@ -145,6 +145,7 @@ clicks on the Button "Create Record"
 
 the Popup is no longer diplayed on the page
     Wait For Elements State    xpath=//*[@id="popup2"]    hidden
+    Sleep 5s
 
 after two seconds the new text-entry appears
     Wait For Elements State    xpath=/html/body/div[4]/table/tbody/tr[5]    visible
