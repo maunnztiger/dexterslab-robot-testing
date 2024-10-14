@@ -141,13 +141,14 @@ adds the percentage to the Value-textfield
 
 clicks on the Button "Create Record"
     Browser.Click     xpath=/html/body/div[7]/div[2]/button[1]
-    Sleep   10s
+    Sleep   3s
 
 the Popup is no longer diplayed on the page
     Wait For Elements State    xpath=//*[@id="popup2"]    hidden
     Sleep   3s
 
 after two seconds the new text-entry appears
+    Wait For Load State    timeout=10s
     Wait For Elements State    xpath=//*[@id="headline"]   visible   timeout=20s
     Wait For Elements State    xpath=/html/body/div[4]/table/tbody   visible   timeout=20s
     Wait For Elements State    xpath=/html/body/div[4]/table/tbody/tr[5]    visible   timeout=20s
@@ -211,7 +212,7 @@ the user clears the according textfields
 
 clicks on the button "Save Changes"
     Browser.Click       xpath=/html/body/div[5]/div[2]/button[1]
-    Sleep    10s
+    Sleep    3s
 
 adds the value to the Aspekt-textfield
     [Arguments]     ${aspect_text}
@@ -223,6 +224,7 @@ adds the value to the Value-textfield
 
 the fourth row "Aspekt"-column has now the text-entry:
     [Arguments]     ${column_text}
+    Wait For Load State    timeout=10s
     Wait For Elements State    xpath=//*[@id="headline"]   visible    timeout=20s
     Wait For Elements State    xpath=/html/body/div[4]/table/tbody   visible     timeout=20s
     
