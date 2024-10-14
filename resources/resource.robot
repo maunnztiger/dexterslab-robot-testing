@@ -16,7 +16,7 @@ ${JSON_PATH}      ${CURDIR}${/}table.json
 *** Keywords ***
 the user opens up 
     [Arguments]     ${browser}
-    Browser.New Browser     ${browser}  headless=True    enable_browser_logs=True
+    Browser.New Browser     ${browser}  headless=True    
 
 opens the Homepage of dexterslab
     ${file}     Load JSON From File     ${CURDIR}${/}config.json
@@ -148,6 +148,8 @@ the Popup is no longer diplayed on the page
     Sleep   3s
 
 after two seconds the new text-entry appears
+    ${logs}=    Get Console Logs
+    Log To Console    ${logs}
     Wait For Load State    timeout=60000ms
     Wait For Elements State    xpath=//*[@id="headline"]   visible   timeout=20s
     Wait For Elements State    xpath=/html/body/div[4]/table/tbody   visible   timeout=20s
@@ -224,6 +226,8 @@ adds the value to the Value-textfield
 
 the fourth row "Aspekt"-column has now the text-entry:
     [Arguments]     ${column_text}
+    ${logs}=    Get Console Logs
+    Log To Console    ${logs}
     Wait For Load State    timeout=60000ms
     Wait For Elements State    xpath=//*[@id="headline"]   visible    timeout=20s
     Wait For Elements State    xpath=/html/body/div[4]/table/tbody   visible     timeout=20s
