@@ -148,6 +148,8 @@ the Popup is no longer diplayed on the page
     Sleep   10s
 
 after two seconds the new text-entry appears
+    Wait For Elements State    xpath=//*[@id="headline"]   visible
+    Wait For Elements State    xpath=/html/body/div[4]/table/tbody   visible
     Wait For Elements State    xpath=/html/body/div[4]/table/tbody/tr[5]    visible
 
 the last row "Id"-column has now new text-entry:
@@ -221,11 +223,15 @@ adds the value to the Value-textfield
 
 the fourth row "Aspekt"-column has now the text-entry:
     [Arguments]     ${column_text}
+    Wait For Elements State    xpath=//*[@id="headline"]   visible
+    Wait For Elements State    xpath=/html/body/div[4]/table/tbody   visible
+    
     ${text} =   Get Text    xpath=/html/body/div[4]/table/tbody/tr[4]/td[2]
     Should Be Equal AS Strings      ${text}   ${column_text}
 
 the fourth row "Value"-column has now the text-entry:
     [Arguments]     ${column_text}
+    
     ${text} =   Get Text    xpath=/html/body/div[4]/table/tbody/tr[4]/td[3]
     Should Be Equal AS Strings      ${text}   ${column_text}
 
