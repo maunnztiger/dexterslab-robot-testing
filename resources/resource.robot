@@ -16,7 +16,7 @@ ${JSON_PATH}      ${CURDIR}${/}table.json
 *** Keywords ***
 the user opens up 
     [Arguments]     ${browser}
-    Browser.New Browser     ${browser}  headless=true
+    Browser.New Browser     ${browser}  headless=True
 
 opens the Homepage of dexterslab
     ${file}     Load JSON From File     ${CURDIR}${/}config.json
@@ -141,15 +141,16 @@ adds the percentage to the Value-textfield
 
 clicks on the Button "Create Record"
     Browser.Click     xpath=/html/body/div[7]/div[2]/button[1]
-    Sleep   3s
+    Sleep   10s
 
 the Popup is no longer diplayed on the page
     Wait For Elements State    xpath=//*[@id="popup2"]    hidden
-    Sleep   10s
+    Sleep   3s
 
 after two seconds the new text-entry appears
     Browser.Click       xpath=//*[@id="headline"]
     Wait For Elements State    xpath=//*[@id="headline"]   visible   timeout=20s
+    Browser.Click       xpath=/html/body/div[4]/table/tbody
     Wait For Elements State    xpath=/html/body/div[4]/table/tbody   visible   timeout=20s
     Wait For Elements State    xpath=/html/body/div[4]/table/tbody/tr[5]    visible   timeout=20s
 
