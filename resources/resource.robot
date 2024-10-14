@@ -148,7 +148,7 @@ the Popup is no longer diplayed on the page
     Sleep   3s
 
 after two seconds the new text-entry appears
-    Wait For Load State    timeout=30s
+    Wait For Navigation    timeout=30s
     Wait For Elements State    xpath=//*[@id="headline"]   visible   timeout=20s
     Wait For Elements State    xpath=/html/body/div[4]/table/tbody   visible   timeout=20s
     Wait For Elements State    xpath=/html/body/div[4]/table/tbody/tr[5]    visible   timeout=20s
@@ -224,7 +224,7 @@ adds the value to the Value-textfield
 
 the fourth row "Aspekt"-column has now the text-entry:
     [Arguments]     ${column_text}
-    Wait For Load State    timeout=30s
+    Wait For Navigation    timeout=30s
     Wait For Elements State    xpath=//*[@id="headline"]   visible    timeout=20s
     Wait For Elements State    xpath=/html/body/div[4]/table/tbody   visible     timeout=20s
     
