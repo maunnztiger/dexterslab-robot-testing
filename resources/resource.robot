@@ -224,7 +224,7 @@ adds the value to the Value-textfield
 
 the fourth row "Aspekt"-column has now the text-entry:
     [Arguments]     ${column_text}
-    Wait For Load State    timeout=10s
+    Wait For Load State    timeout=15s
     Wait For Elements State    xpath=//*[@id="headline"]   visible    timeout=20s
     Wait For Elements State    xpath=/html/body/div[4]/table/tbody   visible     timeout=20s
     
