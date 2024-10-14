@@ -209,7 +209,7 @@ the user clears the according textfields
 
 clicks on the button "Save Changes"
     Browser.Click       xpath=/html/body/div[5]/div[2]/button[1]
-    Sleep    5s
+    Sleep    10s
 
 adds the value to the Aspekt-textfield
     [Arguments]     ${aspect_text}
