@@ -145,7 +145,7 @@ clicks on the Button "Create Record"
 
 the Popup is no longer diplayed on the page
     Wait For Elements State    xpath=//*[@id="popup2"]    hidden
-    Sleep   10s
+    Sleep   5s
 
 after two seconds the new text-entry appears
     Wait For Elements State    xpath=//*[@id="headline"]   visible
@@ -211,7 +211,7 @@ the user clears the according textfields
 
 clicks on the button "Save Changes"
     Browser.Click       xpath=/html/body/div[5]/div[2]/button[1]
-    Sleep    10s
+    Sleep    5s
 
 adds the value to the Aspekt-textfield
     [Arguments]     ${aspect_text}
