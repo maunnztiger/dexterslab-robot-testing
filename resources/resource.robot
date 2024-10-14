@@ -148,7 +148,7 @@ the Popup is no longer diplayed on the page
     Sleep   3s
 
 after two seconds the new text-entry appears
-    ${logs}=    Get Console Logs
+    ${logs}=    Browser.Get Console Log
     Log To Console    ${logs}
     Wait For Load State    timeout=60000ms
     Wait For Elements State    xpath=//*[@id="headline"]   visible   timeout=20s
@@ -226,7 +226,7 @@ adds the value to the Value-textfield
 
 the fourth row "Aspekt"-column has now the text-entry:
     [Arguments]     ${column_text}
-    ${logs}=    Get Console Logs
+    ${logs}=    Browser.Get Console Log
     Log To Console    ${logs}
     Wait For Load State    timeout=60000ms
     Wait For Elements State    xpath=//*[@id="headline"]   visible    timeout=20s
