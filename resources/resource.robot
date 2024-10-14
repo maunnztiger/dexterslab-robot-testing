@@ -148,7 +148,6 @@ the Popup is no longer diplayed on the page
     Sleep   3s
 
 after two seconds the new text-entry appears
-    Browser.Click       xpath=//*[@id="headline"]
     Wait For Elements State    xpath=//*[@id="headline"]   visible   timeout=20s
     Browser.Click       xpath=/html/body/div[4]/table/tbody
     Wait For Elements State    xpath=/html/body/div[4]/table/tbody   visible   timeout=20s
