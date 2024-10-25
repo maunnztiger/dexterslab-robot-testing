@@ -16,7 +16,8 @@ ${JSON_PATH}      ${CURDIR}${/}table.json
 *** Keywords ***
 the user opens up 
     [Arguments]     ${browser}
-    Browser.New Browser     ${browser}  headless=True   
+    Browser.New Browser     ${browser}  headless=False
+    New Context     ignoreHTTPSErrors=True
 
 opens the Homepage of dexterslab
     ${file}     Load JSON From File     ${CURDIR}${/}config.json
